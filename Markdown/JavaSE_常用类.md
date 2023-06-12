@@ -46,3 +46,17 @@ public final class String {
     }
 }
 ```
+- String 内存分析
+  - 直接拼接：不会在堆里开创空间，栈中的变量名直接存储方法区里字符串常量池里的字符串常量地址。
+  - 使用new关键字创建String 对象时会在堆里开辟一个String 类型的对象空间，其中它的Value属性指向字符串常量池中的字符串。
+  - [!img.png](字符串拼接.png) [!img.png](内存空间.png)
+  - 有变量参与的字符串拼接：在编译时不知道a的具体值，因此无法进行字符串优化，实际上会调用`StringBuilder()`方法
+```java
+class Test(){
+    String a = "123";  
+    String s = a + "456";
+}
+```
+- StringBuilder类
+  - `public final class StringBuilder`，表示不可以被继承；**空构造器**实际上是对底层value数组初始化，长度为16
+  - 其父类为：`abstract class AbstractStringBuilder`成员变量： ` char[] value; int count`;
