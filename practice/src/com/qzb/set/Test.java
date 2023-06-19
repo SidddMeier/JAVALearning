@@ -1,9 +1,6 @@
 package com.qzb.set;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -14,5 +11,6 @@ public class Test {
         Student student = new Student();
         Student student1 = new Student();
         Map<Integer,String> map = new HashMap<>();
+        HashSet<Integer> hashSet = new HashSet<>();
     }
 }
