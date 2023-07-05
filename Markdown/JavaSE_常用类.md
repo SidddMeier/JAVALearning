@@ -49,7 +49,9 @@ public final class String {
 - String 内存分析
   - 直接拼接：不会在堆里开创空间，栈中的变量名直接存储方法区里字符串常量池里的字符串常量地址。
   - 使用new关键字创建String 对象时会在堆里开辟一个String 类型的对象空间，其中它的Value属性指向字符串常量池中的字符串。
-  - [!img.png](字符串拼接.png) [!img.png](内存空间.png)
+  - <img src="C:\Users\qzb20\IdeaProjects\JAVALearning\Markdown\Figure\字符串拼接.png" style="zoom:50%;" />
+  - <img src="C:\Users\qzb20\IdeaProjects\JAVALearning\Markdown\Figure\内存空间.png" style="zoom: 33%;" />
+  - 
   - 有变量参与的字符串拼接：在编译时不知道a的具体值，因此无法进行字符串优化，实际上会调用`StringBuilder()`方法
 ```java
 class Test(){
